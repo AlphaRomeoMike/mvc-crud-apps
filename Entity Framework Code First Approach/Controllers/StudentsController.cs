@@ -82,5 +82,10 @@ namespace Entity_Framework_Code_First_Approach.Controllers
             }
             return RedirectToAction("Index"); 
         }
+        public ActionResult Details(int id)
+        {
+            var row = db.Students.Where(model => model.Id == id).FirstOrDefault();
+            return View(row);
+        }
     }
 }
