@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Entity_Framework_Code_First_Approach.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th colspan="2">
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th colspan="4">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th colspan="4">
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th colspan="4">
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td colspan="2">
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td colspan="4">
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td colspan="4">
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td colspan="4">
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
