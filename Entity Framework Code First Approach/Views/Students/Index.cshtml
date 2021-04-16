@@ -6,10 +6,13 @@
 
 <h2>Index</h2>
 @Html.Raw(TempData["Message"])
+@Html.Raw(TempData["Update"])
+@Html.Raw(TempData["Delete"])
+<br />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-outline-success" })
 </p>
-<table class="table">
+<table class="table table-borderless table-active table-striped table-hover">
     <tr>
         <th colspan="2">
             @Html.DisplayNameFor(model => model.Id)
